@@ -19,7 +19,9 @@ opt.cursorline = true
 
 -- appearance
 opt.termguicolors = true
-opt.signcolumn = "no"
+opt.signcolumn = "yes"
+opt.scrolloff = 8
+opt.updatetime = 400
 
 -- backspace
 opt.backspace = "indent,eol,start"

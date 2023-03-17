@@ -40,4 +40,5 @@ return require('packer').startup(function(use)
             {'rafamadriz/friendly-snippets'}, -- Optional
         }
     }
+    use("airblade/vim-gitgutter")
 end) 
