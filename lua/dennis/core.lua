@@ -10,9 +10,12 @@ opt.shiftwidth = 4
 opt.expandtab = true
 opt.autoindent = true
 
+opt.smartindent = true
+
 -- search
 opt.ignorecase = true
 opt.smartcase = true
+opt.incsearch = true
 
 -- cursor line
 opt.cursorline = true
