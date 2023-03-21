@@ -51,5 +51,12 @@ return require('packer').startup(function(use)
             {'ryanoasis/vim-devicons'},
             {'philrunninger/nerdtree-visual-selection'},
             {'xuyuanp/nerdtree-git-plugin'},
-        }}
+        }
+    }
+    use {
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
+    }
 end) 
