@@ -2,7 +2,7 @@ vim.g.mapleader = " "
 
 local keymap = vim.keymap
 
-keymap.set("n", "<leader>dv", ":Lexplore<CR>")
+keymap.set("n", "<leader>dv", ":NERDTreeToggle<CR>")
 keymap.set("n", "<leader>tn", ":tabnew<CR>")
 
 keymap.set("n", "<leader>wj", "<C-W>j")

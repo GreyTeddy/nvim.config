@@ -46,4 +46,10 @@ return require('packer').startup(function(use)
       requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
     use('wellle/context.vim')
+    use{'preservim/nerdtree',
+        requires = {
+            {'ryanoasis/vim-devicons'},
+            {'philrunninger/nerdtree-visual-selection'},
+            {'xuyuanp/nerdtree-git-plugin'},
+        }}
 end) 
