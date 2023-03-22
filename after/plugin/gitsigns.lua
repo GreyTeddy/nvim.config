@@ -13,14 +13,8 @@ require('gitsigns').setup {
     follow_files = true
   },
   max_file_length = 4000,
-  on_attach = function(bufnr)
+  on_attach = function()
     local gs = package.loaded.gitsigns
-
-    local function map(mode, l, r, opts)
-      opts = opts or {}
-      opts.buffer = bufnr
-      vim.keymap.set(mode, l, r, opts)
-    end
-    map('n', '<leader>hp', gs.preview_hunk)
+    vim.keymap.set('n', '<leader>gp', gs.preview_hunk, {desc = 'GitSigns: Preview Hunk'})
   end
 }
