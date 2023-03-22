@@ -10,37 +10,57 @@ return require('packer').startup(function(use)
         -- or                            , branch = '0.1.x',
         requires = { {'nvim-lua/plenary.nvim'} } 
     }
+    use {
+        'nvim-telescope/telescope-fzf-native.nvim',
+        -- NOTE: If you are having trouble with this installation,
+        --       refer to the README for telescope-fzf-native for more instructions.
+        build = 'make',
+        cond = function()
+          return vim.fn.executable 'make' == 1
+        end,
+    }
 
     use "rebelot/kanagawa.nvim"
     vim.cmd("colorscheme kanagawa-wave")
 
-    use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+    -- Highlight, edit, and navigate code
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        dependencies = {
+          'nvim-treesitter/nvim-treesitter-textobjects',
+        },
+        config = function()
+          pcall(require('nvim-treesitter.install').update { with_sync = true })
+        end,
+    }
+
     use('nvim-treesitter/playground')
+
+    -- Git 
     use('tpope/vim-fugitive')
     use('rbong/vim-flog')
-    use {
-        'VonHeikemen/lsp-zero.nvim',
-        branch = 'v1.x',
-        requires = {
-            -- LSP Support
-            {'neovim/nvim-lspconfig'},             -- Required
-            {'williamboman/mason.nvim'},           -- Optional
-            {'williamboman/mason-lspconfig.nvim'}, -- Optional
+    use('lewis6991/gitsigns.nvim', {
+      -- See `:help gitsigns.txt`
+      signs = {
+        add = { text = '+' },
+        change = { text = '~' },
+        delete = { text = '_' },
+        topdelete = { text = '‾' },
+        changedelete = { text = '~' },
+      },
+    })
 
-            -- Autocompletion
-            {'hrsh7th/nvim-cmp'},         -- Required
-            {'hrsh7th/cmp-nvim-lsp'},     -- Required
-            {'hrsh7th/cmp-buffer'},       -- Optional
-            {'hrsh7th/cmp-path'},         -- Optional
-            {'saadparwaiz1/cmp_luasnip'}, -- Optional
-            {'hrsh7th/cmp-nvim-lua'},     -- Optional
+    -- Handle tabstop and shiftwidth
+    use('tpope/vim-sleuth')
 
-            -- Snippets
-            {'L3MON4D3/LuaSnip'},             -- Required
-            {'rafamadriz/friendly-snippets'}, -- Optional
-        }
-    }
-    use("airblade/vim-gitgutter")
+    -- show pending keybinds
+    use('folke/which-key.nvim')
+
+    -- Add indentation guides even on blank lines
+    use('lukas-reineke/indent-blankline.nvim',{
+      char = '┊',
+      show_trailing_blankline_indent = false,
+    })
     use {
       'nvim-lualine/lualine.nvim',
       requires = { 'kyazdani42/nvim-web-devicons', opt = true }
@@ -53,6 +73,8 @@ return require('packer').startup(function(use)
             {'xuyuanp/nerdtree-git-plugin'},
         }
     }
+
+    -- comment out values 
     use {
         'numToStr/Comment.nvim',
         config = function()
