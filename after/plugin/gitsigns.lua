@@ -15,6 +15,6 @@ require('gitsigns').setup {
   max_file_length = 4000,
   on_attach = function()
     local gs = package.loaded.gitsigns
-    vim.keymap.set('n', '<leader>gp', gs.preview_hunk, {desc = 'GitSigns: Preview Hunk'})
+    vim.keymap.set('n', '<leader>gp', gs.preview_hunk, {desc = '[g]itSigns: [p]review Hunk'})
   end
 }
