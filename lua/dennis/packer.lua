@@ -90,5 +90,7 @@ return require('packer').startup(function(use)
     }
 
     use {"akinsho/toggleterm.nvim", tag = '*'}
+    use {"RRethy/vim-illuminate"}
+    use {"windwp/nvim-autopairs"}
 end)
 
