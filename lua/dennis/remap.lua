@@ -3,7 +3,6 @@ vim.g.mapleader = " "
 local keymap = vim.keymap
 
 keymap.set("n", "<leader>dv", ":NERDTreeToggle<CR>",{desc = "Toggle NERDTree"})
-keymap.set("n", "<leader>tn", ":tabnew<CR>",{desc = "Open New Tab" })
 
 keymap.set("n", "<leader>wj", "<C-W>j",{desc = "Move to Up Window"})
 keymap.set("n", "<leader>wh", "<C-W>h",{desc = "Move to Left Window"})
