@@ -92,5 +92,7 @@ return require('packer').startup(function(use)
     use {"akinsho/toggleterm.nvim", tag = '*'}
     use {"RRethy/vim-illuminate"}
     use {"windwp/nvim-autopairs"}
+
+    use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
 end)
 

@@ -2,8 +2,6 @@ vim.g.mapleader = " "
 
 local keymap = vim.keymap
 
-keymap.set("n", "<leader>dv", ":NERDTreeToggle<CR>",{desc = "Toggle NERDTree"})
-
 keymap.set("n", "<leader>wj", "<C-W>j",{desc = "Move to Up Window"})
 keymap.set("n", "<leader>wh", "<C-W>h",{desc = "Move to Left Window"})
 keymap.set("n", "<leader>wk", "<C-W>k",{desc = "Move to Down Window"})
@@ -33,6 +31,6 @@ keymap.set("n", "<leader>qc", ":cexpr []<CR>",{desc = "[q]uickFix: [c]lear searc
 keymap.set("n", "<leader>qo", ":copen<CR>",{desc = "[q]uickFix: [o]pen Window"})
 keymap.set("n", "<leader>qq", ":cclose<CR>",{desc = "[q]uickFix: [c]lose Window"})
 -- places to find
-keymap.set("n", "<leader>ff", ":vimgrep  %<left><left>",{desc = "[q]uickFix: Find in [f]ile"})
-keymap.set("n", "<leader>fd", ":vimgrep  **<left><left><left>",{desc = "[q]uickFix: Find in Project [d]irectory"})
+keymap.set("n", "<leader>qf", ":vimgrep  %<left><left>",{desc = "[q]uickFix: Find in [f]ile"})
+keymap.set("n", "<leader>qd", ":vimgrep  **<left><left><left>",{desc = "[q]uickFix: Find in Project [d]irectory"})
 
