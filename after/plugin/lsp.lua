@@ -14,7 +14,7 @@ local on_attach = function(_, bufnr)
 
     vim.keymap.set('n', '<leader>l' .. keys, func, { buffer = bufnr, desc = desc })
   end
-  nmap('rn', vim.lsp.buf.rename, '[r]ename')
+  nmap('r', vim.lsp.buf.rename, '[r]ename')
   nmap('c', vim.lsp.buf.code_action, '[c]ode Action')
 
   nmap('gd', vim.lsp.buf.definition, '[g]oto [D]efinition')
