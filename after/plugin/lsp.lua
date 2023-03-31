@@ -23,7 +23,7 @@ local on_attach = function(_, bufnr)
   nmap('gD', vim.lsp.buf.declaration, '[g]oto [D]eclaration')
 
   nmap('D', vim.lsp.buf.type_definition, 'Type [D]efinition')
-  nmap('ds', require('telescope.builtin').lsp_document_symbols, '[d]ocument [s]ymbols')
+  nmap('s', require('telescope.builtin').lsp_document_symbols, '[d]ocument [s]ymbols')
 
   -- See `:help K` for why this keymap
   nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
