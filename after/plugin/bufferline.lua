@@ -31,4 +31,5 @@ end
 nvmap('h', ':bNext<CR>', "Left [h]")
 nvmap('l', ':bnext<CR>', "Right [l]")
 nvmap('q', ':bd<CR>', "[q]uit")
+nvmap('Q', ':bd!<CR>', "force [Q]uit")
 nvmap('n', ':enew<CR>', "[n]ew")
